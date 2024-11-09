@@ -1,0 +1,353 @@
+@import url("styles/header.css");
+@import url("styles/banner.css");
+@import url("styles/carrossel.css");
+@import url("styles/topicos.css");
+@import url("styles/contato.css");
+@import url("styles/rodapé.css");
+
+/* Definindo variáveis para o tema */
+:root {
+    --cor-de-fundo: #EBECEE;
+    --branco: #FFFFFF;
+    --laranja: #EB9B00;
+    --azul-degrade: linear-gradient(97.54deg, #002f52 35.49%, #326589 165.37%);
+    --fonte-principal: "Poppins", sans-serif;
+    --azul: #002F52;
+    --fonte-secundario: "Josefin Sans", sans-serif;
+    --preto: #000000;
+    --cinza: #474646;
+    --cinza-claro: #858585;
+}
+
+/* Estilos globais */
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-principal);
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    color: var(--cinza);
+}
+
+/* Resetando margens e padding */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para links */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--laranja);
+}
+
+/* Estilos do Cabeçalho */
+header {
+    background-color: var(--azul);
+    padding: 20px 0;
+    color: var(--branco);
+    position: relative;
+    z-index: 10;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-family: var(--fonte-secundario);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--branco);
+}
+
+header .lista-menu {
+    display: flex;
+    list-style: none;
+}
+
+header .lista-menu__item {
+    margin-right: 30px;
+}
+
+header .lista-menu__link {
+    color: var(--branco);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header .lista-menu__link:hover {
+    color: var(--laranja);
+}
+
+/* Menu hambúrguer */
+.container__botao:checked + .container__rotulo + .lista-menu {
+    display: block;
+}
+
+.lista-menu {
+    display: none;
+}
+
+.container__rotulo {
+    display: block;
+    cursor: pointer;
+}
+
+.container__imagem {
+    max-width: 100%;
+}
+
+.container__imagem-transparente {
+    opacity: 0.7;
+}
+
+.opções__botão {
+    display: none;
+}
+
+.opções__rotulo {
+    cursor: pointer;
+    color: var(--branco);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.opções__item {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+/* Seção do banner */
+.banner {
+    background: var(--azul-degrade);
+    padding: 60px 20px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.banner__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner__texto {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.banner__pesquisa {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Carrossel */
+.carrossel {
+    padding: 50px 20px;
+    background-color: var(--branco);
+}
+
+.carrossel__titulo {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.carrossel__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.swiper-slide img:hover {
+    transform: scale(1.05);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--azul);
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.card__descrição {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card__descrição img {
+    max-width: 150px;
+    border-radius: 5px;
+}
+
+.card__botões {
+    display: flex;
+    align-items: center;
+}
+
+.botões__item {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.botões__ancora {
+    font-weight: 500;
+    color: var(--azul);
+    transition: color 0.3s ease;
+}
+
+.botões__ancora:hover {
+    color: var(--laranja);
+}
+
+/* Tópicos Recentemente Visitados */
+.tópicos {
+    background-color: var(--branco);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.tópicos__titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tópicos__lista {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tópicos__item {
+    margin: 10px 20px;
+}
+
+.tópicos__link {
+    font-weight: 500;
+    color: var(--azul);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.tópicos__link:hover {
+    color: var(--laranja);
+}
+
+/* Contato */
+.contato {
+    background-color: var(--azul);
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.contato__titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.contato__texto {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.contato__email {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Rodapé */
+.rodapé {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.rodapé__titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.lista-rodapé {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.lista-rodapé__titulo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.lista-rodapé__item {
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.lista-rodapé__link {
+    color: var(--branco);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.lista-rodapé__link:hover {
+    color: var(--laranja);
+}
+
+.lista-rodapé__item img {
+    margin-right: 10px;
+    max-width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.lista-rodapé__item img:hover {
+    transform: scale(1.1);
+}
